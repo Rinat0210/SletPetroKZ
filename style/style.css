@@ -1,0 +1,670 @@
+
+/* ============================================================================
+   SLETPETRO KZ - MINIMALIST CATALOG WEBSITE CSS
+   Colors: White (primary), Red (#DC143C), Black (#1a1a1a)
+   All corners rounded, clean and simple design
+   ============================================================================ */
+
+/* ============================================================================
+   RESET AND GLOBAL STYLES
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+a {
+    color: #DC143C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #b01030;
+}
+
+/* ============================================================================
+   LAYOUT CONTAINERS
+   ============================================================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main {
+    min-height: calc(100vh - 200px);
+}
+
+/* ============================================================================
+   HEADER STYLES
+   ============================================================================ */
+
+.header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__logo {
+    flex-shrink: 0;
+}
+
+.logo__img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header__nav {
+    flex: 1;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav__link:hover {
+    background-color: #f5f5f5;
+    color: #DC143C;
+}
+
+.nav__link--active {
+    background-color: #DC143C;
+    color: #ffffff;
+}
+
+.nav__link--active:hover {
+    background-color: #b01030;
+    color: #ffffff;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.hero__text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+    max-width: 900px;
+}
+
+.hero__list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.hero__list-item {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #333;
+    font-size: 1rem;
+}
+
+.hero__list-item:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #DC143C;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ============================================================================
+   PRODUCTS SECTION (MAIN PAGE GRID)
+   ============================================================================ */
+
+.products {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+.products__title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+.products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(220, 20, 60, 0.15);
+    transform: translateY(-4px);
+}
+
+.product-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.product-card__image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    display: block;
+}
+
+.product-card__title {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.product-card__description {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ============================================================================
+   PRODUCT OVERVIEW SECTION (PRODUCT PAGES)
+   ============================================================================ */
+
+.product-overview {
+    padding: 3rem 0;
+    background-color: #ffffff;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+}
+
+.product-gallery__img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    /*
+    background-color: #f5f5f5;
+    padding: 1rem;
+    */
+}
+
+.product-title {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+    color: #1a1a1a;
+}
+
+.product-pdf {
+    margin: 1.5rem 0;
+}
+
+.product-pdf__link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #DC143C;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.product-pdf__link:hover {
+    background-color: #b01030;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+}
+
+.product-intro-title {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1.5rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.product-intro {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+.product-intro__subtitle {
+    font-size: 1.2rem;
+    color: #DC143C;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.product-intro__text {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.product-intro__text:last-child {
+    margin-bottom: 0;
+}
+
+.product-intro__list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.product-intro__item {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #333;
+}
+
+.product-intro__item:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #DC143C;
+    font-weight: bold;
+}
+
+/* ============================================================================
+   WHATSAPP BUTTON SECTION
+   ============================================================================ */
+
+.whatsapp-section {
+    padding: 2.5rem 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #DC143C;
+    color: #ffffff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-button:hover {
+    background-color: #DC143C;
+    color: #ffffff;
+     box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+     transform: translateY(-2px);
+}
+
+/* ============================================================================
+   PRODUCT FEATURES SECTION
+   ============================================================================ */
+
+.product-features {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.product-features__title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+}
+
+.product-feature {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.product-feature:last-child {
+    border-bottom: none;
+}
+
+.product-feature__subtitle {
+    font-size: 1.3rem;
+    color: #DC143C;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.product-feature__text {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.product-feature__list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.product-feature__item {
+    padding: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #333;
+    line-height: 1.7;
+    border-left: 3px solid #DC143C;
+    padding-left: 1.5rem;
+    margin-left: 0;
+}
+
+.product-feature__item:before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    color: #DC143C;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.product-feature__img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+/* ============================================================================
+   FOOTER STYLES
+   ============================================================================ */
+
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer__contacts,
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #DC143C;
+    font-weight: 600;
+}
+
+.footer__text {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer__text strong {
+    color: #ffffff;
+}
+
+.footer__social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.footer__social-link:hover {
+    background-color: #DC143C;
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.footer__social-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer__copyright {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+
+    .header__container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav__list {
+        justify-content: center;
+    }
+
+    .products__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero__text {
+        font-size: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav__list {
+        gap: 0.25rem;
+    }
+
+    .nav__link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .products__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card__image {
+        height: 200px;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+    }
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* Smooth transitions for interactive elements */
+button,
+.button,
+a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Remove underline from active link */
+.nav__link--active {
+    color: #ffffff;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Accessibility improvements */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #DC143C;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
